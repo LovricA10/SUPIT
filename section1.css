@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Navigation bar*/
+.header-section {
+  width: 100%;
+}
+
+.nav-bar {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 0px;
+}
+
+.main-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.main-list li {
+  margin: 0px 15px;
+}
+
+.main-list li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+/*hover za linkove*/
+
+.main-list li a:hover {
+  color: #ffcc00;
+}
+
+/*First section*/
+.first-section {
+  width: 100%;
+  overflow: hidden; /*hide part of image */
+}
+
+.first-section #campus {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/*About us - first section*/
+.about-us {
+  margin: 20px 0px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yellow-line {
+  height: 3px;
+  width: 1000px;
+  background-color: #ffcc00;
+  margin-top: 5px;
+}
+
+.about-us #value {
+  font-weight: bold;
+  color: #bf3939;
+  margin-top: 50px;
+}
