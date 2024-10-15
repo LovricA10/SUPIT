@@ -155,3 +155,86 @@ body {
   margin-top: 50px;
   text-align: center;
 }
+
+/*History section*/
+
+.history-grayBox {
+  background-color: #f9f9f9;
+  font-style: italic;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.history-grayBox .history-text > p {
+  font-family: "Dancing script", cursive;
+  line-height: 30px;
+  font-size: 20px;
+  max-width: 900px;
+  margin: 0 auto; /*center inside box*/
+}
+.history-grayBox .history-text #second-paragraph-history {
+  margin-top: 50px;
+}
+
+/*history boxes*/
+
+.boxes-history {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.HistoryBox_9 {
+  border: 1px solid #b8b6b6;
+  margin-right: 5px;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.boxes-history .HistoryBox_9 h3 {
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+
+.boxes-history .HistoryBox_9 h3 span {
+  color: #3386d4;
+}
+.HistoryBox_9 > p {
+  color: #b0aeae;
+  padding: 10px;
+}
+
+.gray-line-history {
+  height: 2px;
+  width: 350px;
+  background-color: #ebe8e8;
+  margin: 0px 20px;
+}
+
+/*Algebra section*/
+
+.Algebra-group {
+  font-weight: bold;
+  color: #bf3939;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.algebra-grayBox {
+  background-color: #f9f9f9;
+  font-style: italic;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.algebra-grayBox .algebra-text > p {
+  font-family: "Dancing script", cursive;
+  line-height: 30px;
+  font-size: 20px;
+  max-width: 900px;
+  margin: 0 auto; /*center inside box*/
+}
+.algebra-grayBox .algebra-text #second-paragraph-algebra {
+  margin-top: 50px;
+}
