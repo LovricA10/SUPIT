@@ -50,9 +50,14 @@ body {
   align-items: center;
   margin-right: 30px;
 }
-.transition-list li {
+.transition-list li a {
   margin: 0px 15px;
   color: #ffcc00;
+  text-decoration: none;
+}
+
+.transition-list li a:hover {
+  color: #fff70a;
 }
 /*first section*/
 .first-section {
@@ -108,4 +113,45 @@ body {
 }
 .our-values #second-paragraph {
   margin-top: 50px;
+}
+
+/*3 box about quality*/
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.box {
+  border: 1px solid #b8b6b6;
+  margin-right: 5px;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.boxes .box h3 {
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+
+.box > p {
+  color: #b0aeae;
+  padding: 10px;
+}
+
+/*gray line*/
+.gray-line {
+  height: 2px;
+  width: 350px;
+  background-color: #ebe8e8;
+  margin: 0px 20px;
+}
+
+.history {
+  font-weight: bold;
+  color: #bf3939;
+  margin-top: 50px;
+  text-align: center;
 }
