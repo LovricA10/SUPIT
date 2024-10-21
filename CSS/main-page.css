@@ -1,71 +1,10 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/*Navigation bar*/
-.header-section {
-  width: 100%;
-  position: fixed;
-}
-
-.nav-bar {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 5px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-list,
-.transition-list {
-  display: flex;
-  list-style-type: none;
-}
-
-.main-list li {
-  margin: 0px 15px;
-}
-
-.main-list li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-}
-/*hover za linkove*/
-
-.main-list li a:hover {
-  color: #ffcc00;
-}
-
-/*transition list*/
-
-.transition-list {
-  justify-content: end;
-  align-items: center;
-  margin-right: 30px;
-}
-.transition-list li a {
-  margin: 0px 15px;
-  color: #ffcc00;
-  text-decoration: none;
-}
-
-.transition-list li a:hover {
-  color: #fff70a;
-}
 /*first section*/
-.first-section {
+#first-section {
   width: 100%;
   overflow: hidden; /*hide part of image */
 }
 
-.first-section #campus {
+#first-section #campus {
   width: 100%;
   height: auto;
   max-height: 400px;
@@ -89,13 +28,7 @@ body {
   margin-top: 5px;
 }
 
-.about-us #value {
-  font-weight: bold;
-  color: #bf3939;
-  margin-top: 50px;
-}
-
-/*Nase vrijednosti*/
+/*Our values*/
 
 .our-values {
   background-color: #f9f9f9;
@@ -117,21 +50,21 @@ body {
 
 /*3 box about quality*/
 
-.boxes {
+#boxes {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /*go in new row(smaller screen)*/
   margin-top: 40px;
+  gap: 10px;
   justify-content: center;
 }
 
 .box {
   border: 1px solid #b8b6b6;
-  margin-right: 5px;
   max-width: 400px;
   border-radius: 5px;
 }
 
-.boxes .box h3 {
+#boxes .box h3 {
   text-transform: uppercase;
   padding-left: 20px;
 }
@@ -144,35 +77,28 @@ body {
 /*gray line*/
 .gray-line {
   height: 2px;
-  width: 350px;
+  width: 90%;
   background-color: #ebe8e8;
   margin: 0px 20px;
 }
 
-.history {
-  font-weight: bold;
-  color: #bf3939;
-  margin-top: 50px;
-  text-align: center;
-}
+/*Media query for 3 boxes */
 
 /*History section*/
 
-.history-grayBox {
-  background-color: #f9f9f9;
-  font-style: italic;
-  padding: 50px;
+#history-graybox {
+  padding: 50px 0;
   box-sizing: border-box;
 }
 
-.history-grayBox .history-text > p {
+.history-text > p {
   font-family: "Dancing script", cursive;
   line-height: 30px;
   font-size: 20px;
   max-width: 900px;
   margin: 0 auto; /*center inside box*/
 }
-.history-grayBox .history-text #second-paragraph-history {
+#second-paragraph-history {
   margin-top: 50px;
 }
 
@@ -181,26 +107,26 @@ body {
 .boxes-history {
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
   justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.HistoryBox_9 {
+.historybox-9 {
   border: 1px solid #b8b6b6;
-  margin-right: 5px;
   max-width: 400px;
   border-radius: 5px;
 }
 
-.boxes-history .HistoryBox_9 h3 {
+.boxes-history .historybox-9 h3 {
   text-transform: uppercase;
   padding-left: 20px;
 }
 
-.boxes-history .HistoryBox_9 h3 span {
+.boxes-history .historybox-9 h3 span {
   color: #3386d4;
 }
-.HistoryBox_9 > p {
+.historybox-9 > p {
   color: #b0aeae;
   padding: 10px;
 }
@@ -214,27 +140,96 @@ body {
 
 /*Algebra section*/
 
-.Algebra-group {
-  font-weight: bold;
-  color: #bf3939;
-  margin-top: 50px;
-  text-align: center;
+#algebra-graybox {
+  padding: 50px 0;
 }
 
-.algebra-grayBox {
-  background-color: #f9f9f9;
-  font-style: italic;
-  padding: 50px;
-  box-sizing: border-box;
-}
-
-.algebra-grayBox .algebra-text > p {
+.algebra-text > p {
   font-family: "Dancing script", cursive;
   line-height: 30px;
   font-size: 20px;
   max-width: 900px;
   margin: 0 auto; /*center inside box*/
 }
-.algebra-grayBox .algebra-text #second-paragraph-algebra {
+
+#second-paragraph-algebra {
   margin-top: 50px;
+}
+
+/*Algebra group boxes*/
+
+.algebra-big-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.algebra-box {
+  margin-right: 5px;
+  max-width: 400px;
+  height: 250px; /*fix height for lines-box*/
+  display: flex;
+  flex-direction: column;
+}
+
+.algebra-big-container .algebra-box > h3 {
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  max-height: 60px;
+}
+
+.gray-line-algebra {
+  height: 2px;
+  width: 400px;
+  background-color: #ebe8e8;
+}
+
+.algebra-box img {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /*automatic margin for center*/
+  height: auto;
+}
+
+.small-image {
+  width: 100px; /* width for small image */
+  height: auto; /* keep proportion */
+}
+
+.large-image {
+  width: 250px; /* width for large image */
+  height: auto; /* keep proportion */
+}
+
+/*Map section*/
+
+.map-box-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  /*same height*/
+  align-items: center;
+}
+.map-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #b8b6b6;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 500px;
+  height: 450px;
+}
+
+.map-mini-box > p {
+  padding: 0 10px;
+  color: #929090;
+}
+
+.map-mini-box p span a {
+  color: #3386d4;
+  font-weight: bold;
+  text-decoration: none;
 }
