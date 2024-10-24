@@ -208,10 +208,16 @@
 
 .map-box-container {
   display: flex;
+  flex-wrap: wrap; /*new row*/
   gap: 20px;
   justify-content: center;
-  /*same height*/
   align-items: center;
+
+  /*Backround image map for section*/
+
+  background-image: url(../images/kakoDoNas.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .map-box {
   display: flex;
@@ -221,15 +227,48 @@
   padding: 20px;
   max-width: 500px;
   height: 450px;
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+
+.map-iframe iframe {
+  width: calc(2 * 500px + 20px);
+  height: 400px;
+  margin-bottom: 50px;
 }
 
 .map-mini-box > p {
   padding: 0 10px;
-  color: #929090;
+  color: #1a1818;
 }
 
 .map-mini-box p span a {
   color: #3386d4;
   font-weight: bold;
   text-decoration: none;
+}
+
+/*footer*/
+
+.footer-of-page {
+  background-image: url(../images/zaiskri-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-of-page > h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#first {
+  color: #ffffff;
+}
+
+#second {
+  color: #962a2a;
 }
