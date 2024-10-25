@@ -19,6 +19,7 @@ body {
   color: #ffffff;
   padding: 5px 0px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -35,7 +36,13 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
-/*hover za linkove*/
+
+.main-list li img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/*hover effect for links*/
 
 .main-list li a:hover {
   color: #ffcc00;
@@ -63,6 +70,13 @@ body {
   color: #bf3939;
   margin: 50px 0;
   text-align: center;
+  font-size: 30px;
+}
+
+/*red icon*/
+.red-icon {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 /*gray background, italic*/
@@ -70,4 +84,56 @@ body {
   padding: 50px;
   background-color: #f9f9f9;
   font-style: italic;
+}
+
+/*footer*/
+
+.footer-of-page {
+  background-image: url(../images/zaiskri-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-of-page > h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#first {
+  color: #ffffff;
+}
+
+#second {
+  color: #962a2a;
+}
+/*responsive for mobile - FIX*/
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 5px 0;
+  }
+
+  .main-list,
+  .transition-list {
+    flex-direction: column; /* Stack items on smaller screens */
+    gap: 10px; /* Smaller gap between items */
+    justify-content: center;
+  }
+}
+
+/*responsive for tablet - FIX */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-bar {
+    padding: 10px 0;
+  }
+
+  .main-list,
+  .transition-list {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
 }

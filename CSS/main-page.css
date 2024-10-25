@@ -21,6 +21,9 @@
   align-items: center;
 }
 
+.about-us h2 {
+  font-size: 30px;
+}
 .yellow-line {
   height: 3px;
   width: 1000px;
@@ -106,7 +109,7 @@
 
 .boxes-history {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
@@ -160,7 +163,7 @@
 
 .algebra-big-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 40px;
   justify-content: center;
   gap: 20px;
@@ -248,27 +251,51 @@
   text-decoration: none;
 }
 
-/*footer*/
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .algebra-big-container,
+  #boxes,
+  .boxes-history {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-of-page {
+    padding: 20px 10px;
+    text-align: center;
+  }
 
-.footer-of-page {
-  background-image: url(../images/zaiskri-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  .footer-of-page > h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .map-iframe iframe {
+    width: 100%;
+    height: 300px;
+  }
 }
 
-.footer-of-page > h2 {
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  padding-top: 40px;
-  font-size: 50px;
-  font-weight: bold;
-}
+/*responsive for tablet - FIX*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .algebra-big-container,
+  #boxes,
+  .boxes-history {
+    flex-direction: row;
+    justify-content: center;
+  }
 
-#first {
-  color: #ffffff;
-}
+  .footer-of-page {
+    padding: 30px 15px;
+    text-align: center;
+  }
 
-#second {
-  color: #962a2a;
+  .footer-of-page > h2 {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  .map-iframe iframe {
+    width: 100%;
+    height: 350px;
+  }
 }
