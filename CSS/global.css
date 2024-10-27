@@ -122,6 +122,16 @@ body {
     gap: 10px; /* Smaller gap between items */
     justify-content: center;
   }
+
+  .footer-of-page {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .footer-of-page > h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
 }
 
 /*responsive for tablet - FIX */
