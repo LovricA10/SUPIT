@@ -12,6 +12,7 @@ body {
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 2;
 }
 
 .nav-bar {
@@ -46,6 +47,28 @@ body {
 
 .main-list li a:hover {
   color: #ffcc00;
+}
+/*Black center text, yellow line*/
+.about-us {
+  margin: 20px 0px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us h2 {
+  font-size: 30px;
+}
+
+.yellow-line {
+  height: 3px;
+  width: 100%;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #ffcc00;
+  margin-top: 5px;
 }
 
 /*transition list*/

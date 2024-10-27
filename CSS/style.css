@@ -10,27 +10,7 @@
   max-height: 400px;
   object-fit: cover;
 }
-
-/*About us - first section*/
-.about-us {
-  margin: 20px 0px;
-  text-align: center;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.about-us h2 {
-  font-size: 30px;
-}
-.yellow-line {
-  height: 3px;
-  width: 100%;
-  max-width: 1000px;
-  background-color: #ffcc00;
-  margin-top: 5px;
-}
+/*About us moved to global.css*/
 
 /*Our values*/
 
