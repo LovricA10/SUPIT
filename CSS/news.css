@@ -84,12 +84,6 @@
 
 /*Responsive*/
 @media (max-width: 768px) {
-  .main-list {
-    display: flex;
-    flex-direction: row;
-    padding-right: 15px;
-  }
-
   .yellow-line {
     width: 90%;
     max-width: 500px;

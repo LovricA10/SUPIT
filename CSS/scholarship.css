@@ -31,15 +31,6 @@
 
 /*Responsive*/
 @media (max-width: 768px) {
-  .main-list {
-    display: flex;
-    flex-direction: row;
-    padding-right: 15px;
-  }
-  /* .main-list li a span {
-    display: none;
-  } */
-
   #img-scholarship {
     margin-top: 80px;
   }
@@ -65,6 +56,6 @@
 
   .footer-of-page {
     height: auto;
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
 }

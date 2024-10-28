@@ -58,12 +58,6 @@
 /*Responsive*/
 
 @media (max-width: 768px) {
-  .main-list {
-    display: flex;
-    flex-direction: row;
-    padding-right: 15px;
-  }
-
   #img-world-skill {
     margin-top: 80px;
   }

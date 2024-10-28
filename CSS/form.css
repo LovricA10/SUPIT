@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* 100% height */
+  min-height: 670px;
 }
 #form {
   width: 300px;
@@ -20,7 +20,7 @@
 }
 
 .form-parameters input {
-  padding: 5px;
+  padding: 10px;
 }
 
 #section-form input,
@@ -30,7 +30,7 @@ button {
 
 #form button {
   margin-top: 20px;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   max-width: 500px;
   background-color: #28292b;
@@ -46,12 +46,7 @@ button {
   font-weight: bold;
 }
 
-/*Responsive*/
-
-@media (max-width: 768px) {
-  .main-list {
-    display: flex;
-    flex-direction: row;
-    margin-right: 15px;
-  }
+.footer-of-page {
+  padding: 40px 0; /* Povećaj padding da se dobije više prostora */
+  min-height: 150px; /* Postavi minimalnu visinu */
 }
