@@ -34,13 +34,18 @@
   .main-list {
     display: flex;
     flex-direction: row;
+    padding-right: 15px;
   }
   /* .main-list li a span {
     display: none;
   } */
+
+  #img-scholarship {
+    margin-top: 80px;
+  }
   .overlay-text {
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 25%;
     font-size: 10px;
   }

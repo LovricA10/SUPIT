@@ -1,0 +1,57 @@
+#section-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% height */
+}
+#form {
+  width: 300px;
+  padding: 20px;
+}
+#form legend {
+  margin-bottom: 20px;
+}
+
+.form-parameters {
+  margin-top: 5px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-parameters input {
+  padding: 5px;
+}
+
+#section-form input,
+button {
+  border-radius: 5px;
+}
+
+#form button {
+  margin-top: 20px;
+  padding: 5px;
+  width: 100%;
+  max-width: 500px;
+  background-color: #28292b;
+  color: #ffffff;
+}
+
+.register-link {
+  margin-top: 20px;
+}
+
+.register-link a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*Responsive*/
+
+@media (max-width: 768px) {
+  .main-list {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+  }
+}

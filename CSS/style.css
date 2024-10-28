@@ -240,6 +240,29 @@
     flex-direction: column;
     align-items: center;
   }
+  /* .main-list li a span {
+    display: none;
+  }
+
+  .main-list,
+  .transition-list {
+    display: flex;
+    flex-direction: row;
+  } */
+  /*New changes*/
+
+  .historybox-9 > h3 {
+    font-size: 15px;
+  }
+  .yellow-line,
+  .gray-line-algebra {
+    width: 90%;
+    max-width: 500px;
+  }
+  /*End*/
+  .algebra-big-container .algebra-box > h3 {
+    font-size: 15px;
+  }
   .map-box p {
     font-size: 15px;
   }
@@ -249,7 +272,7 @@
   }
 }
 
-/*responsive for tablet - FIX*/
+/* responsive for tablet - FIX
 @media (min-width: 769px) and (max-width: 1024px) {
   .algebra-big-container,
   #boxes,
@@ -272,4 +295,4 @@
     width: 100%;
     height: 350px;
   }
-}
+} */
