@@ -48,6 +48,7 @@
   display: flex;
   justify-content: center;
   margin: 40px 0;
+  position: relative;
 }
 
 #world-skill-video video {
@@ -55,6 +56,16 @@
   max-width: calc(2 * 300px + 20px);
 }
 
+#play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*center button*/
+  font-size: 100px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+}
 /*Responsive*/
 
 @media (max-width: 768px) {

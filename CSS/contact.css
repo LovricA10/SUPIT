@@ -1,0 +1,85 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 670px;
+  padding: 0 20px;
+}
+.contact-header {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-header img {
+  height: 35px;
+}
+
+.contact-header legend {
+  font-size: 35px;
+  margin: 0;
+}
+
+.gray-line {
+  height: 2px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #ebe8e8;
+  margin-top: 20px;
+}
+/*set width and padding of form*/
+
+#contact-form {
+  width: 100%;
+  max-width: 600px;
+}
+
+/*bold labels*/
+#contact-form label {
+  font-weight: bold;
+}
+
+.contact-parameters {
+  margin-top: 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-parameters input {
+  padding: 10px;
+}
+
+.contact-parameters #contact-importance {
+  padding: 10px;
+}
+
+.contact-parameters #contact-message {
+  padding: 50px;
+}
+
+/*check box, 2 buttons*/
+
+.checkbox-button #checkbox {
+  margin: 20px 5px;
+  vertical-align: middle;
+}
+
+.checkbox-button .buttons {
+  display: flex;
+  gap: 10px;
+}
+.checkbox-button .button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  color: #ffffff;
+}
+
+.checkbox-button .button:first-child {
+  background-color: #03b1fc;
+}
+
+.checkbox-button .button:last-child {
+  background-color: #ed070f;
+}
