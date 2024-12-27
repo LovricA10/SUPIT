@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/contact.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <div class="contact">
+      <div class="contact-header">
+        <img src="./icons/Mail.svg" alt="mail-icon" />
+        <legend>Kontaktirajte nas</legend>
+      </div>
+      <div class="gray-line"></div>
+
+      <form id="contact-form">
+        <div class="contact-parameters">
+          <label for="contact-name">Puno ime</label>
+          <input
+            type="text"
+            id="contact-name"
+            name="contact-name"
+            placeholder="Ime i prezime"
+          />
+        </div>
+
+        <div class="contact-parameters">
+          <label for="contact-email">E-mail</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="contact-email"
+            placeholder="Unesite email"
+          />
+        </div>
+
+        <div class="contact-parameters">
+          <label for="contact-importance">Važnost poruke</label>
+          <select id="contact-importance" name="contact-importance">
+            <option value="low">Niska</option>
+            <option value="medium">Srednja</option>
+            <option value="high">Visoka</option>
+          </select>
+        </div>
+        <div class="contact-parameters">
+          <label for="contact-message">Poruka</label>
+          <textarea id="contact-message" name="contact-message"></textarea>
+        </div>
+        <div class="checkbox-button">
+          <label>
+            Želim primati obavijesti
+            <input type="checkbox" name="contact-notifications" id="checkbox" />
+          </label>
+          <div class="buttons">
+            <button type="submit" class="button">Pošalji</button>
+            <button type="button" class="button">Odustani</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

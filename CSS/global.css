@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Navigation bar*/
+.header-section {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.nav-bar {
+  background-color: #1a1818;
+  color: #ffffff;
+  padding: 5px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-list,
+.transition-list {
+  display: flex;
+  list-style-type: none;
+  gap: 40px;
+}
+
+.main-list li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-list li img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/*hover effect for links*/
+
+.main-list li a:hover {
+  color: #ffcc00;
+}
+/*Black center text, yellow line*/
+.about-us {
+  margin: 20px 0px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 2s ease-in-out forwards;
+}
+
+/* All images animation */
+#campus,
+#img-dig-junior,
+#img-world-skill,
+#img-scholarship {
+  transform: translateY(-100%);
+  animation: slideDown 1s ease-in-out forwards;
+}
+
+/* Image Slide Down Animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Text and yellow line Slide Up Animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.about-us h2 {
+  font-size: 30px;
+}
+
+.yellow-line {
+  height: 3px;
+  width: 100%;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #ffcc00;
+  margin-top: 5px;
+}
+
+/*transition list*/
+
+.transition-list {
+  justify-content: end;
+  align-items: center;
+  margin-right: 30px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: SlideFromRight 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+/*Animation slide from R to L*/
+
+@keyframes SlideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.transition-list li a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.transition-list li a:hover {
+  color: #fff70a;
+}
+
+/*Red center text*/
+.red-text {
+  font-weight: bold;
+  color: #bf3939;
+  margin: 50px 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+/*red icon*/
+.red-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/*gray background, italic*/
+
+.gray-background {
+  padding: 50px;
+  background-color: #f9f9f9;
+  font-style: italic;
+}
+
+/* Default visibility */
+.gray-background,
+.our-values p {
+  opacity: 1;
+  transform: translate(0);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When the section is the target*/
+#first-section:target .our-values p,
+#values-section:target .our-values p,
+#history-graybox:target .gray-background p,
+#algebra-graybox:target .gray-background p {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: VisibleText 1s ease-out forwards;
+}
+
+/* Animation for text */
+@keyframes VisibleText {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*footer*/
+
+.footer-of-page {
+  background-image: url(../images/zaiskri-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-of-page > h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#first {
+  color: #ffffff;
+}
+
+#second {
+  color: #962a2a;
+}
+/*responsive for mobile - FIX*/
+@media (max-width: 768px) {
+  .main-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .main-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-list li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-list li img {
+    margin-top: 8px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footer-of-page {
+    padding: 10px 10px;
+    text-align: center;
+  }
+
+  .footer-of-page > h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+/*news animation*/
+
+.img-border-radius {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: circleFadeIn 1s ease-out forwards;
+}
+
+/* move up animation*/
+@keyframes circleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
