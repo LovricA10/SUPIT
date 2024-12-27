@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 670px;
+  height: 100%;
   padding: 0 20px;
+  overflow-y: auto;
 }
 .contact-header {
   display: flex;
@@ -82,4 +83,10 @@
 
 .checkbox-button .button:last-child {
   background-color: #ed070f;
+}
+
+@media (max-width: 768px) {
+  .contact-header legend {
+    font-size: 30px;
+  }
 }

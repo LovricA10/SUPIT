@@ -18,17 +18,17 @@
       <nav class="nav-bar">
         <ul class="main-list">
           <li>
-            <a href="#">
+            <a href="form.html">
               <span>Prijavi se</span> <img src="./icons/Login.svg" alt="login"
             /></a>
           </li>
           <li>
-            <a href="#">
+            <a href="main-page.html">
               <span>Početna</span> <img src="./icons/Home.svg" alt="home"
             /></a>
           </li>
           <li>
-            <a href="#">
+            <a href="index.html">
               <span>O nama</span><img src="./icons/About us.svg" alt="about-us"
             /></a>
           </li>
@@ -38,7 +38,7 @@
             /></a>
           </li>
           <li>
-            <a href="#"
+            <a href="#contact-overlay"
               ><span>Kontakt</span><img src="./icons/Contact.svg" alt="contact"
             /></a>
           </li>
@@ -52,6 +52,18 @@
         </ul>
       </nav>
     </header>
+
+    <!-- iframe for contact.html -->
+    <div id="contact-overlay" class="overlay">
+      <div class="overlay-content">
+        <a href="#" class="close-overlay">&times;</a>
+        <iframe
+          src="contact.html"
+          frameborder="0"
+          class="contact-iframe"
+        ></iframe>
+      </div>
+    </div>
 
     <section id="first-section">
       <img src="./images/kampus-iz-zraka-min-1.jpg" alt="kampus" id="campus" />
@@ -518,4 +530,5 @@
       </div>
     </footer>
   </body>
+  <script src="./JS/contact.js"></script>
 </html>
