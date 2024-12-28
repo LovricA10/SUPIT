@@ -53,17 +53,17 @@
   padding: 10px;
 }
 
-.contact-parameters #contact-importance {
+.contact-parameters #Importance {
   padding: 10px;
 }
 
-.contact-parameters #contact-message {
+.contact-parameters #Message {
   padding: 50px;
 }
 
 /*check box, 2 buttons*/
 
-.checkbox-button #checkbox {
+.checkbox-button #ReceiveNewsletter {
   margin: 20px 5px;
   vertical-align: middle;
 }
