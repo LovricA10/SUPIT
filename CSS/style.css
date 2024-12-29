@@ -1,297 +1,87 @@
-/*first section*/
-#first-section {
+.bg-video {
+  overflow: hidden;
   width: 100%;
-  overflow: hidden; /*hide part of image */
+  height: 100vh;
 }
 
-#first-section #campus {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
+.bg-video video {
   object-fit: cover;
 }
-/*About us moved to global.css*/
 
-/*Our values*/
-
-.our-values {
-  background-color: #f9f9f9;
-  font-style: italic;
-  padding: 50px;
-  box-sizing: border-box;
+#text-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.our-values > p {
-  font-family: "Dancing script", cursive;
-  line-height: 30px;
-  font-size: 20px;
-  max-width: 900px;
-  margin: 0 auto; /*center inside box*/
-}
-.our-values #second-paragraph {
-  margin-top: 50px;
+#typing-text h1 {
+  margin: 0;
+  margin-right: 8px;
 }
 
-/*3 box about quality*/
-
-#boxes {
-  display: flex;
-  flex-wrap: wrap; /*go in new row(smaller screen)*/
-  margin-top: 40px;
-  gap: 10px;
-  justify-content: center;
+#typing-text {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  max-width: fit-content;
+  animation: typing 4s steps(31) 1s forwards, blink 0.75s step-end infinite;
 }
 
-.box {
-  border: 1px solid #b8b6b6;
-  max-width: 400px;
-  border-radius: 5px;
+@keyframes typing {
+  0% {
+    width: 0;
+    border-right: 0px;
+  }
+  1% {
+    border-right: 16px solid #fff;
+  }
+  100% {
+    width: 100%;
+    border-right: 16px solid #fff;
+  }
 }
 
-#boxes .box h3 {
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Stil za "Zaiskri" */
+#highlight {
+  color: #f50a0a;
+  font-size: 30px;
   text-transform: uppercase;
-  padding-left: 20px;
+  opacity: 0;
+  animation: highlight 2s forwards;
+  animation-delay: 5s;
 }
 
-.box > p {
-  color: #b0aeae;
-  padding: 10px;
+@keyframes highlight {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/*gray line*/
-.gray-line {
-  height: 2px;
-  width: 90%;
-  background-color: #ebe8e8;
-  margin: 0px 20px;
-}
-
-/*Media query for 3 boxes */
-
-/*History section*/
-
-#history-graybox {
-  padding: 50px 0;
-  box-sizing: border-box;
-}
-
-.history-text > p {
-  font-family: "Dancing script", cursive;
-  line-height: 30px;
-  font-size: 20px;
-  max-width: 900px;
-  margin: 0 auto; /*center inside box*/
-}
-#second-paragraph-history {
-  margin-top: 50px;
-}
-
-/*history boxes*/
-
-.boxes-history {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.historybox-9 {
-  border: 1px solid #b8b6b6;
-  max-width: 400px;
-  border-radius: 5px;
-}
-
-.boxes-history .historybox-9 h3 {
-  text-transform: uppercase;
-  padding-left: 20px;
-}
-
-.boxes-history .historybox-9 h3 span {
-  color: #3386d4;
-}
-.historybox-9 > p {
-  color: #b0aeae;
-  padding: 10px;
-}
-
-.gray-line-history {
-  height: 2px;
-  width: 350px;
-  background-color: #ebe8e8;
-  margin: 0px 20px;
-}
-
-/*Algebra section*/
-
-#algebra-graybox {
-  padding: 50px 0;
-}
-
-.algebra-text > p {
-  font-family: "Dancing script", cursive;
-  line-height: 30px;
-  font-size: 20px;
-  max-width: 900px;
-  margin: 0 auto; /*center inside box*/
-}
-
-#second-paragraph-algebra {
-  margin-top: 50px;
-}
-
-/*Algebra group boxes*/
-
-.algebra-big-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 40px;
-  justify-content: center;
-  gap: 20px;
-}
-
-.algebra-box {
-  margin-right: 5px;
-  max-width: 400px;
-  height: 250px; /*fix height for lines-box*/
-  display: flex;
-  flex-direction: column;
-}
-
-.algebra-big-container .algebra-box > h3 {
-  text-transform: uppercase;
-  padding-bottom: 20px;
-  max-height: 60px;
-}
-
-.gray-line-algebra {
-  height: 2px;
-  width: 400px;
-  background-color: #ebe8e8;
-}
-
-.algebra-box img {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block; /*automatic margin for center*/
-  height: auto;
-}
-
-.small-image {
-  width: 100px; /* width for small image */
-  height: auto; /* keep proportion */
-}
-
-.large-image {
-  width: 250px; /* width for large image */
-  height: auto; /* keep proportion */
-}
-
-/*Map section*/
-
-.map-box-container {
-  display: flex;
-  flex-wrap: wrap; /*new row*/
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-
-  /*Backround image map for section*/
-
-  background-image: url(../images/kakoDoNas.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.map-box {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #b8b6b6;
-  border-radius: 4px;
-  padding: 20px;
-  max-width: 500px;
-  height: 450px;
-  background-color: #ffffff;
-  margin-top: 50px;
-}
-
-.map-iframe iframe {
-  width: calc(2 * 500px + 20px);
-  height: 400px;
-  margin-bottom: 50px;
-}
-
-.map-mini-box > p {
-  padding: 0 10px;
-  color: #1a1818;
-}
-
-.map-mini-box p span a {
-  color: #3386d4;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Responsive for mobile */
 @media (max-width: 768px) {
-  .algebra-big-container,
-  #boxes,
-  .boxes-history {
-    flex-direction: column;
-    align-items: center;
+  .bg-video {
+    height: 100vh;
+  }
+  .bg-video video {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-
-  .box,
-  .historybox-9,
-  .algebra-box {
-    max-width: 100%;
-    margin: 15px;
-    padding: 0;
-  }
-
-  .algebra-box > h3 {
-    text-align: center;
-  }
-  /*header*/
-
-  .transition-list {
-    margin-right: 0;
-    display: none;
-  }
-
-  .historybox-9 > h3 {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  /*yellow line, gray line*/
-
-  .yellow-line,
-  .gray-line-algebra,
-  .gray-line-history {
-    width: 90%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  /*location section*/
-
-  .algebra-big-container .algebra-box > h3 {
-    font-size: 15px;
-  }
-  .map-box p {
-    font-size: 15px;
-  }
-
-  .map-box {
-    width: 90%;
-    padding: 10px;
-  }
-
-  .map-iframe iframe {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
+  #typing-text {
+    font-size: 20px;
   }
 }
