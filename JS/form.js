@@ -1,62 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("form");
   const registerLink = document.querySelector(".register-link a");
 
-  // Login form submission event
-  loginForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
+  loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent default form submission
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Reset custom validity before new validation checks
-    document.getElementById("username").setCustomValidity("");
-    document.getElementById("password").setCustomValidity("");
+    try {
+      const response = await fetch(
+        "https://www.fulek.com/data/api/user/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
-    let valid = true;
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login response:", data); // Inspect server response
 
-    // Check if username is empty
-    if (username === "") {
-      document
-        .getElementById("username")
-        .setCustomValidity("Korisničko ime je obavezno!");
-      valid = false;
+        // Correctly access token from response
+        if (data.data && data.data.token) {
+          localStorage.setItem("jwt", data.data.token); // Store token for future requests
+          window.location.href = "index.html"; // Redirect to the homepage
+        } else {
+          alert("Login failed.");
+        }
+      } else {
+        alert("Invalid credentials. Please try again."); // General error for failed response
+      }
+    } catch (error) {
+      console.error("Login error:", error); // Log any network errors
+      alert("An error occurred. Please try again."); // Notify user of an error
     }
-    // Check if username contains '@'
-    else if (!username.includes("@")) {
-      document
-        .getElementById("username")
-        .setCustomValidity("Korisničko ime mora sadržavati '@'!");
-      valid = false;
-    }
-
-    // Check if password is empty
-    if (password === "") {
-      document
-        .getElementById("password")
-        .setCustomValidity("Lozinka je obavezna!");
-      valid = false;
-    }
-    // Check if password has at least 8 characters
-    else if (password.length < 8) {
-      document
-        .getElementById("password")
-        .setCustomValidity("Lozinka mora imati najmanje 8 znakova.");
-      valid = false;
-    }
-
-    // If there are validation errors
-    if (!valid) {
-      document.querySelector("form").reportValidity(); // Triggers native validation and displays error messages
-      return;
-    }
-
-    alert("User not found"); // If user is not found, show this message
   });
 
-  // Go to registration.html
-  registerLink.addEventListener("click", function (event) {
+  registerLink.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = "Registration.html";
+    window.location.href = "registration.html"; // Redirect to registration page
   });
 });

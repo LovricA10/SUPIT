@@ -85,12 +85,20 @@
         <img src="./images/galerija2.jpg" alt="gallery-1" />
       </div>
 
+      <!-- modal for images when click on them -->
+      <!-- Modal -->
+      <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <span class="prev">&lt;</span>
+        <img id="modal-image" />
+        <span class="next">&gt;</span>
+      </div>
+
       <div id="world-skill-video">
-        <video id="skill-video">
+        <video id="skill-video" controls>
           <source src="./video/worldskills.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div id="play-button">&#9658;</div>
       </div>
 
       <footer>
@@ -100,5 +108,7 @@
         </div>
       </footer>
     </section>
+
+    <script src="./JS/World-skills.js"></script>
   </body>
 </html>

@@ -1,49 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  // Wait for the DOM to be fully loaded before executing the script
   const registrationForm = document.getElementById("form");
 
-  registrationForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevents form submission
+  registrationForm.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Reset previous errors
-    document.getElementById("username").setCustomValidity("");
-    document.getElementById("password").setCustomValidity("");
+    try {
+      // Send a POST request to the registration API
+      const response = await fetch(
+        "https://www.fulek.com/data/api/user/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" }, // Specify the content type as JSON
+          body: JSON.stringify({ username, password }), // Convert the input data to a JSON string
+        }
+      );
 
-    let valid = true;
-
-    // Check if username is inserted
-    if (username === "") {
-      document
-        .getElementById("username")
-        .setCustomValidity("Korisničko ime je obavezno!");
-      valid = false;
-    } else if (!username.includes("@")) {
-      document
-        .getElementById("username")
-        .setCustomValidity("Korisničko ime mora sadržavati znak @ !");
-      valid = false;
-    }
-
-    // Check if password is inserted
-    if (password === "") {
-      document
-        .getElementById("password")
-        .setCustomValidity("Lozinka je obavezna!");
-      valid = false;
-    } else if (password.length < 8) {
-      document
-        .getElementById("password")
-        .setCustomValidity("Lozinka mora imati barem 8 znakova.");
-      valid = false;
-    }
-
-    // If all conditions are met, redirect to form.html
-    if (valid) {
-      window.location.href = "form.html";
-    } else {
-      document.querySelector("form").reportValidity();
+      if (response.ok) {
+        // alert("Registration successful! Redirecting to login...");
+        window.location.href = "form.html"; // Redirect to the login page
+      } else {
+        // If the registration fails, notify the user
+        alert("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      // Handle any errors that occur during the API request
+      console.error("Registration error:", error);
+      alert("An error occurred. Please try again.");
     }
   });
 });
