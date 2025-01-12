@@ -1,0 +1,60 @@
+#search-form {
+  margin-top: 70px;
+  margin-left: 50px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.about-us {
+  margin-top: 80px;
+}
+
+/*bold labels*/
+#search-form label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.search-parameters {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-parameters input {
+  padding: 10px;
+}
+
+.footer-of-page {
+  height: 260px;
+  margin-top: 150px;
+  width: 100%;
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+  .yellow-line {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .about-us {
+    margin-top: 110px;
+  }
+
+  .about-us h2 {
+    font-size: 20px;
+  }
+  #search-form {
+    margin-top: 40px;
+    margin-left: 10px;
+    width: 70%;
+    max-width: 400px;
+  }
+
+  .footer-of-page {
+    height: auto;
+    padding: 20px 10px;
+    margin-top: 130px;
+  }
+}

@@ -20,7 +20,7 @@ function openModal(src) {
   modalImg.src = src;
 }
 
-// Funkcija za promjenu slike
+// Change image function
 function changeImage(increment) {
   currentIndex = (currentIndex + increment + images.length) % images.length;
   modalImg.src = images[currentIndex].src;
