@@ -2,39 +2,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const jwtToken = localStorage.getItem("jwt"); // Retrieve the JWT token from localStorage
 
+  async function getCurriculum() {
+    try {
+      // Send a GET request to search
+      const response = await fetch(
+        `https://www.fulek.com/data/api/supit/curriculum-list/hr`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${jwtToken}`, // Send the JWT token for authentication
+          },
+        }
+      );
+      // If the response is successful, proceed to handle the data
+      if (response.ok) {
+        const formattedResponse = await response.json(); // Parse the response as JSON
+        console.log("Fetched curricula:", formattedResponse); // Log the fetched data for debugging
+        const curriculumList = formattedResponse.data;
+
+        const options = curriculumList.map((curriculum) => {
+          return `<option value="${curriculum.kolegij}"> </option>`;
+        });
+        console.log(options);
+        const dataList = document.getElementById("subject");
+        dataList.innerHTML = options.join(" ");
+      } else {
+        console.error("Error fetching curriculum data", response);
+      }
+    } catch (error) {
+      console.error("Error:", error); // Handle any errors during the fetch request
+    }
+  }
+  getCurriculum();
+
   // Event listener for user input to trigger search
   searchInput.addEventListener("input", async () => {
     const query = searchInput.value.trim();
 
     // Only trigger search when the user enters more than 2 characters
     if (query.length > 2) {
-      try {
-        // Send a GET request to search
-        const response = await fetch(
-          `https://www.fulek.com/data/api/supit/curriculumlist/hr?search=${query}`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${jwtToken}`, // Send the JWT token for authentication
-            },
-          }
-        );
-
-        // If the response is successful, proceed to handle the data
-        if (response.ok) {
-          const data = await response.json(); // Parse the response as JSON
-          console.log("Fetched curricula:", data); // Log the fetched data for debugging
-          displayAutocompleteResults(data); // Function to display the results
-        } else {
-          console.error("Error fetching curriculum data");
-        }
-      } catch (error) {
-        console.error("Error:", error); // Handle any errors during the fetch request
-      }
     }
   });
 
-  // Function to display the search results in an autocomplete dropdown
+  //   Function to display the search results in an autocomplete dropdown
   function displayAutocompleteResults(data) {
     const resultsContainer = document.createElement("ul"); // Create a <ul> to hold the results
     resultsContainer.innerHTML = ""; // Clear any previous results

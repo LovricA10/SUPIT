@@ -2,9 +2,14 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 /*Navigation bar*/
@@ -327,4 +332,9 @@ body {
   font-size: 30px;
   text-decoration: none;
   color: #000;
+}
+
+/* global class for hidden items */
+.hidden {
+  display: none;
 }

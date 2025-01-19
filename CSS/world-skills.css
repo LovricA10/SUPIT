@@ -19,6 +19,7 @@
   max-width: 50%;
   color: #ffffff;
   font-size: 30px;
+  text-shadow: 1px 1px 2px black;
 }
 
 #world-skill-section p {
