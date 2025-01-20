@@ -11,7 +11,9 @@
   <body>
     <header class="header-section">
       <nav class="nav-bar">
-        <div id="hamburger-menu"><p>hamburger</p></div>
+        <div id="hamburger-menu">
+          <img src="./icons/Menu.svg" alt="hamburger menu" />
+        </div>
         <ul class="main-list">
           <li id="login">
             <a href="form.html"
@@ -63,50 +65,52 @@
       </div>
     </div>
 
-    <section id="curriculum-section">
-      <div class="about-us">
-        <h2>Nastavni plan</h2>
-        <div class="yellow-line"></div>
-      </div>
-
-      <div id="flex-container">
-        <form action="" method="get" id="search-form">
-          <div class="search-parameters">
-            <label id="curriculum-label">Naziv kolegija:</label>
-            <input
-              type="text"
-              name="query"
-              placeholder="Search"
-              id="search-input"
-              autocomplete="off"
-              list="subject"
-            />
-            <datalist id="subject">
-              <!-- Options will be dynamically populated -->
-            </datalist>
-          </div>
-        </form>
-        <div id="table-container">
-          <table id="selected-curriculum-table">
-            <thead>
-              <tr>
-                <th>Kolegij</th>
-                <th>ECTS</th>
-                <th>Sati</th>
-                <th>Predavanja</th>
-                <th>Vježbe</th>
-                <th>Tip</th>
-                <th>Akcija</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-            <tfoot>
-              <!-- This will contain the totals row -->
-            </tfoot>
-          </table>
+    <main id="main-content">
+      <section id="curriculum-section">
+        <div class="about-us">
+          <h2>Nastavni plan</h2>
+          <div class="yellow-line"></div>
         </div>
-      </div>
-    </section>
+
+        <div id="flex-container">
+          <form action="" method="get" id="search-form">
+            <div class="search-parameters">
+              <label id="curriculum-label">Naziv kolegija:</label>
+              <input
+                type="text"
+                name="query"
+                placeholder="Search"
+                id="search-input"
+                autocomplete="off"
+                list="subject"
+              />
+              <datalist id="subject">
+                <!-- Options will be dynamically populated -->
+              </datalist>
+            </div>
+          </form>
+          <div id="table-container">
+            <table id="selected-curriculum-table">
+              <thead>
+                <tr>
+                  <th>Kolegij</th>
+                  <th>ECTS</th>
+                  <th>Sati</th>
+                  <th>Predavanja</th>
+                  <th>Vježbe</th>
+                  <th>Tip</th>
+                  <th>Akcija</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+              <tfoot>
+                <!-- This will contain the totals row -->
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <div class="footer-of-page">

@@ -7,7 +7,7 @@
   width: 100%;
   height: auto;
   max-height: 400px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /*h2 element over image*/
@@ -19,6 +19,7 @@
   max-width: 50%;
   color: #ffffff;
   font-size: 30px;
+  text-shadow: 1px 1px 2px black;
 }
 
 #scholarship-section p {
@@ -31,9 +32,6 @@
 
 /*Responsive*/
 @media (max-width: 768px) {
-  #img-scholarship {
-    margin-top: 80px;
-  }
   .overlay-text {
     position: absolute;
     top: 12%;
@@ -52,10 +50,5 @@
   .yellow-line {
     width: 90%;
     max-width: 500px;
-  }
-
-  .footer-of-page {
-    height: auto;
-    padding: 10px 10px;
   }
 }

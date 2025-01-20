@@ -7,7 +7,7 @@
   width: 100%;
   height: auto;
   max-height: 400px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 #digital-junior-section p {
@@ -19,10 +19,6 @@
 }
 
 @media (max-width: 768px) {
-  #img-dig-junior {
-    margin-top: 80px;
-  }
-
   #digital-junior-section p {
     padding-top: 15px;
     line-height: 20px;
@@ -34,10 +30,5 @@
   .yellow-line {
     width: 90%;
     max-width: 500px;
-  }
-
-  .footer-of-page {
-    height: auto;
-    padding: 20px 10px;
   }
 }

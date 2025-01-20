@@ -1,6 +1,5 @@
 #search-form {
-  margin-top: 70px;
-  margin-left: 50px;
+  margin: 80px auto;
   width: 100%;
   max-width: 600px;
 }
@@ -13,6 +12,7 @@
   display: flex;
   gap: 20px;
   flex: 1;
+  padding: 0 15px;
 }
 
 /*bold labels*/
@@ -35,7 +35,7 @@
 #selected-curriculum-table {
   display: none;
   width: 100%;
-  margin: 40px 20px; /* Reduced space between the table and the top */
+  margin: 50px auto; /* Reduced space between the table and the top */
   border-collapse: collapse;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -98,16 +98,15 @@ tfoot {
 #selected-curriculum-table tr:not(:empty) th {
   display: table-cell; /* Make header visible when there's at least one row */
 }
-.footer-of-page {
-  position: fixed;
-  height: 260px;
-  margin-top: 150px;
-  width: 100%;
-}
 
 #table-container {
   width: 100%;
+  margin: 0 10px;
   overflow: hidden;
+}
+
+#main-content {
+  min-height: 80vh;
 }
 
 /* Responsive */
@@ -126,8 +125,8 @@ tfoot {
   }
 
   #search-form {
-    margin-top: 40px;
-    margin-left: 10px;
+    margin-top: 20px;
+    padding: 0 15px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box; /* Ensure padding/borders are included in width */
@@ -142,25 +141,31 @@ tfoot {
     box-sizing: border-box; /* Prevent content from overflowing */
   }
 
+  #table-container {
+    width: 100%;
+    overflow: auto;
+    align-items: center;
+  }
+
   /* Adjust the table to be full width and stack under the form */
   #selected-curriculum-table {
     width: 100%;
     max-width: 100%;
-    margin-top: 20px;
-    display: block;
+    margin: 0 auto;
+    display: none;
     box-sizing: border-box; /* Prevent content from overflowing */
-    overflow-x: auto; /* Allow horizontal scroll if needed */
+    overflow-x: auto; /*Allow horizontal scroll if needed */
   }
 
   /* Adjust table padding for small screens */
   #selected-curriculum-table th,
   #selected-curriculum-table td {
-    padding: 8px;
-    font-size: 14px;
+    padding: 6px 8px;
+    font-size: 12px;
   }
 
   /* Show the table header when there are rows */
-  #selected-curriculum-table th {
+  #selected-curriculum-table tr:not(:empty) th {
     display: table-cell;
   }
 
@@ -181,11 +186,4 @@ tfoot {
     padding: 5px 10px;
     font-size: 12px;
   }
-}
-
-/* General Footer styling */
-.footer-of-page {
-  height: auto;
-  padding: 20px 10px;
-  margin-top: 130px;
 }

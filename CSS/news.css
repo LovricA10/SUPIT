@@ -73,15 +73,6 @@
   margin-top: 0px;
 }
 
-.footer-of-page {
-  height: 325px;
-  width: 100%;
-}
-
-.footer-of-page h2:first-child {
-  padding-top: 70px;
-}
-
 /*Responsive*/
 @media (max-width: 768px) {
   .yellow-line {
@@ -92,10 +83,5 @@
   .img-news {
     background-color: #ffffff;
     gap: 40px;
-  }
-
-  .footer-of-page {
-    height: auto;
-    padding: 20px 10px;
   }
 }
