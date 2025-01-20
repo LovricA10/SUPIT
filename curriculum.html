@@ -11,6 +11,7 @@
   <body>
     <header class="header-section">
       <nav class="nav-bar">
+        <div id="hamburger-menu"><p>hamburger</p></div>
         <ul class="main-list">
           <li id="login">
             <a href="form.html"
@@ -68,45 +69,41 @@
         <div class="yellow-line"></div>
       </div>
 
-      <form action="" method="get" id="search-form">
-        <div class="search-parameters">
-          <label id="curriculum-label">Naziv kolegija:</label>
-          <input
-            type="text"
-            name="query"
-            placeholder="Search"
-            id="search-input"
-            autocomplete="off"
-            list="subject"
-          />
-        </div>
-        <datalist id="subject"> </datalist>
-      </form>
-      <ul
-        id="autocomplete-results"
-        class="autocomplete-results"
-        style="display: none"
-      ></ul>
-      <div id="curriculum-details">
-        <table id="selected-curriculum-table">
-          <thead>
-            <tr>
-              <th>Kolegij</th>
-              <th>ECTS</th>
-              <th>Sati</th>
-              <th>Predavanja</th>
-              <th>Vježbe</th>
-              <th>Tip</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Details will be appended here -->
-          </tbody>
-        </table>
-        <div id="total-info">
-          <p id="total-ects">Ukupno ECTS: 0</p>
-          <p id="total-hours">Ukupno Sati: 0</p>
+      <div id="flex-container">
+        <form action="" method="get" id="search-form">
+          <div class="search-parameters">
+            <label id="curriculum-label">Naziv kolegija:</label>
+            <input
+              type="text"
+              name="query"
+              placeholder="Search"
+              id="search-input"
+              autocomplete="off"
+              list="subject"
+            />
+            <datalist id="subject">
+              <!-- Options will be dynamically populated -->
+            </datalist>
+          </div>
+        </form>
+        <div id="table-container">
+          <table id="selected-curriculum-table">
+            <thead>
+              <tr>
+                <th>Kolegij</th>
+                <th>ECTS</th>
+                <th>Sati</th>
+                <th>Predavanja</th>
+                <th>Vježbe</th>
+                <th>Tip</th>
+                <th>Akcija</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <!-- This will contain the totals row -->
+            </tfoot>
+          </table>
         </div>
       </div>
     </section>

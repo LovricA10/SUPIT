@@ -9,6 +9,12 @@
   margin-top: 80px;
 }
 
+#flex-container {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
 /*bold labels*/
 #search-form label {
   font-weight: bold;
@@ -25,21 +31,17 @@
   padding: 10px;
 }
 
-/* Stilizacija tablice sa podacima o kolegijima */
-#curriculum-details {
-  display: none; /* Skriva tablicu na početku */
-  width: 70%; /* Manja širina tablice */
-  margin-left: auto;
-  margin-right: 0;
-  margin-top: 20px;
-}
-
-/* Tablica */
+/* Table for selected subjects */
 #selected-curriculum-table {
+  display: none;
   width: 100%;
+  margin: 40px 20px; /* Reduced space between the table and the top */
   border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ddd;
 }
 
+/* Reduce padding in table rows */
 #selected-curriculum-table th,
 #selected-curriculum-table td {
   padding: 10px;
@@ -56,19 +58,59 @@
   background-color: #fff;
 }
 
+tfoot {
+  display: none;
+}
+/* Modify the "Total info" section */
 #total-info {
+  display: none;
   margin-top: 20px;
-  text-align: right;
   font-size: 16px;
 }
 
+#total-info p {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+/* Delete button */
+.delete-btn {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* If there are no rows, hide the header */
+#selected-curriculum-table th {
+  display: none; /* Hide header when table is empty */
+}
+
+/* Show header when there are items in the table */
+#selected-curriculum-table tr:not(:empty) th {
+  display: table-cell; /* Make header visible when there's at least one row */
+}
 .footer-of-page {
+  position: fixed;
   height: 260px;
   margin-top: 150px;
   width: 100%;
 }
 
-/*Responsive*/
+#table-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .yellow-line {
     width: 90%;
@@ -82,20 +124,68 @@
   .about-us h2 {
     font-size: 20px;
   }
+
   #search-form {
     margin-top: 40px;
     margin-left: 10px;
-    width: 70%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Ensure padding/borders are included in width */
   }
 
-  #curriculum-details {
+  /* Flex container should stack elements vertically */
+  #flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Prevent content from overflowing */
+  }
+
+  /* Adjust the table to be full width and stack under the form */
+  #selected-curriculum-table {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    display: block;
+    box-sizing: border-box; /* Prevent content from overflowing */
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+  }
+
+  /* Adjust table padding for small screens */
+  #selected-curriculum-table th,
+  #selected-curriculum-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Show the table header when there are rows */
+  #selected-curriculum-table th {
+    display: table-cell;
+  }
+
+  /* Adjust the search parameters for small screens */
+  .search-parameters {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
 
-  .footer-of-page {
-    height: auto;
-    padding: 20px 10px;
-    margin-top: 130px;
+  .search-parameters input {
+    padding: 8px;
   }
+
+  /* Adjust the delete button size */
+  .delete-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* General Footer styling */
+.footer-of-page {
+  height: auto;
+  padding: 20px 10px;
+  margin-top: 130px;
 }

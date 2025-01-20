@@ -14,6 +14,7 @@ body {
 
 /*Navigation bar*/
 .header-section {
+  overflow: auto;
   width: 100%;
   position: fixed;
   top: 0;
@@ -46,6 +47,10 @@ body {
 .main-list li img {
   vertical-align: middle;
   margin-left: 5px;
+}
+
+#hamburger-menu {
+  display: none;
 }
 
 /*hover effect for links*/
@@ -221,9 +226,12 @@ body {
 }
 /*responsive for mobile - FIX*/
 @media (max-width: 768px) {
+  #hamburger-menu {
+    display: block;
+  }
   .main-list {
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     align-items: center;
     padding: 0;
     gap: 20px;
@@ -231,13 +239,11 @@ body {
 
   .main-list li {
     display: flex;
-    flex-direction: column;
     align-items: center;
   }
 
   .main-list li a {
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
   }
