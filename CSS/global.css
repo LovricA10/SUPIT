@@ -230,7 +230,7 @@ body {
     display: block;
   }
   .main-list {
-    display: none;
+    display: none; /*fix for hamburger menu */
     flex-direction: column;
     align-items: center;
     padding: 0;
@@ -241,7 +241,6 @@ body {
   }
 
   .main-list li {
-    display: flex;
     align-items: center;
   }
 

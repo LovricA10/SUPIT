@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   logoutItem.addEventListener("click", () => {
     localStorage.removeItem("jwt"); //remove token from storage
   });
-});
 
-// JavaScript za funkcionalnost hamburger menija
-document
-  .getElementById("hamburger-menu")
-  .addEventListener("click", function () {
-    const menuList = document.querySelector(".main-list");
-    menuList.classList.toggle("show"); // Togglira meni kada je kliknuto na hamburger
-  });
+  // JavaScript za funkcionalnost hamburger menija
+  document
+    .getElementById("hamburger-menu")
+    .addEventListener("click", function () {
+      const menuList = document.querySelector(".main-list");
+      menuList.classList.toggle("show");
+    });
+});
