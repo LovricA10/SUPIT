@@ -1,3 +1,7 @@
+#main-content {
+  min-height: 80vh;
+}
+
 .news {
   margin: 80px 0px;
   text-align: center;
