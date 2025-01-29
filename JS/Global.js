@@ -51,7 +51,6 @@ $(document).ready(function () {
   if (page !== "contact.html" && page !== "index.html") {
     $("footer").load("footer.html");
   }
-
   // Add contact iframe overlay dynamically (for all pages except contact.html)
   if (!window.location.pathname.includes("contact.html")) {
     const contactOverlay = `

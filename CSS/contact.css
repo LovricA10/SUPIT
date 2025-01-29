@@ -89,6 +89,28 @@
 
 @media (max-width: 768px) {
   .contact-header legend {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .contact-header img {
+    height: 30px;
+  }
+
+  .contact-parameters {
+    gap: 15px;
+  }
+
+  .contact-parameters input,
+  .contact-parameters #Importance,
+  .contact-parameters #Message {
+    padding: 10px;
+  }
+
+  .checkbox-button .buttons {
+    gap: 8px;
+  }
+
+  .checkbox-button .button {
+    padding: 8px;
   }
 }

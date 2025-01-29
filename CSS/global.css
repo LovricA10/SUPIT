@@ -273,6 +273,21 @@ body {
     font-size: 30px;
     line-height: 1.2;
   }
+
+  .overlay-content {
+    padding: 15px; /* Reduce padding for small screens */
+    max-width: 100%; /* Keep it at 100% on small screens */
+  }
+
+  .contact-iframe {
+    height: 80vh; /* Reduce iframe height for smaller screens */
+  }
+
+  .close-overlay {
+    top: 5px; /* Adjust close button position */
+    right: 15px; /* Adjust close button position */
+    font-size: 25px; /* Make the close button smaller */
+  }
 }
 
 /*news animation*/
