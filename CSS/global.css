@@ -325,6 +325,8 @@ body {
   box-shadow: 0 4px 8px #00000033;
   max-height: 95vh;
   overflow: hidden;
+  /* Ensuring content is centered*/
+  margin: 20px auto;
 }
 
 .contact-iframe {

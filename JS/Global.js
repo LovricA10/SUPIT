@@ -1,28 +1,79 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const loginItem = document.getElementById("login");
-  const logoutItem = document.getElementById("logout");
-  const studyProgram = document.getElementById("study-program");
+$(document).ready(function () {
+  // Dynamically load header from 'header.html'
+  $("header").load("header.html", function () {
+    // Check JWT token and show/hide items only after header is loaded
+    const loginItem = $("#login");
+    const logoutItem = $("#logout");
+    const studyProgram = $("#study-program");
 
-  const jwtToken = localStorage.getItem("jwt");
+    const jwtToken = localStorage.getItem("jwt");
 
-  if (jwtToken) {
-    loginItem.classList.add("hidden");
-    logoutItem.classList.remove("hidden");
-    studyProgram.classList.remove("hidden");
-  } else {
-    loginItem.classList.remove("hidden");
-    logoutItem.classList.add("hidden");
-    studyProgram.classList.add("hidden");
-  }
-  logoutItem.addEventListener("click", () => {
-    localStorage.removeItem("jwt"); //remove token from storage
+    if (jwtToken) {
+      loginItem.addClass("hidden");
+      logoutItem.removeClass("hidden");
+      studyProgram.removeClass("hidden");
+    } else {
+      loginItem.removeClass("hidden");
+      logoutItem.addClass("hidden");
+      studyProgram.addClass("hidden");
+    }
+
+    // Logout functionality
+    logoutItem.on("click", function () {
+      localStorage.removeItem("jwt"); // Remove token from localStorage
+    });
+
+    // Hamburger menu functionality
+    $("#hamburger-menu").on("click", function () {
+      $(".main-list").toggleClass("show");
+    });
+
+    // Add extra menu items on 'about.html' after header is loaded
+    if (window.location.pathname.includes("about.html")) {
+      const transitionList = $("<ul>").addClass("transition-list");
+
+      transitionList.append(
+        '<li><a href="#first-section">Naše vrijednosti</a></li>'
+      );
+      transitionList.append('<li><a href="#history-graybox">Povijest</a></li>');
+      transitionList.append(
+        '<li><a href="#algebra-graybox">Algebra grupa</a></li>'
+      );
+      transitionList.append('<li><a href="#map-section">Kako do nas</a></li>');
+
+      // Append the additional menu to the nav bar
+      $(".nav-bar").append(transitionList);
+    }
   });
 
-  // JavaScript za funkcionalnost hamburger menija
-  document
-    .getElementById("hamburger-menu")
-    .addEventListener("click", function () {
-      const menuList = document.querySelector(".main-list");
-      menuList.classList.toggle("show");
-    });
+  // Dynamically load footer from 'footer.html' (except on contact.html and index.html)
+  let page = window.location.pathname.split("/").pop();
+  if (page !== "contact.html" && page !== "index.html") {
+    $("footer").load("footer.html");
+  }
+
+  // Add contact iframe overlay dynamically (for all pages except contact.html)
+  if (!window.location.pathname.includes("contact.html")) {
+    const contactOverlay = `
+      <div id="contact-overlay" class="overlay">
+        <div class="overlay-content">
+          <a href="#" class="close-overlay">&times;</a>
+          <iframe src="contact.html" frameborder="0" class="contact-iframe"></iframe>
+        </div>
+      </div>
+    `;
+
+    // Append the overlay to the body of the page
+    $("body").append(contactOverlay);
+  }
+
+  // Use event delegation for dynamically added elements
+  $(document).on("click", "#contact-overlay-link", function (e) {
+    e.preventDefault();
+    $("#contact-overlay").fadeIn(); // Show the overlay
+  });
+
+  $(document).on("click", ".close-overlay", function () {
+    $("#contact-overlay").fadeOut(); // Hide the overlay
+  });
 });
